@@ -1,5 +1,6 @@
 import HeroSection from "@/components/Hero";
 import Contact from "@/components/Contact";
+import Skills from "@/components/Skills";
 import NavBar from "@/components/NavBar";
 import About from "@/components/About";
 export default function Home() {
@@ -11,7 +12,8 @@ export default function Home() {
           <HeroSection />
           <About />
           <br />
-
+          <Skills />
+          <br />
           <Contact />
         </div>
       </div>
