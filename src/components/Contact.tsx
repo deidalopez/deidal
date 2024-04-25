@@ -1,8 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { FaLinkedin } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Contact = () => {
   const [emailSubmitted, setEmailSubmitted] = React.useState(false);
