@@ -1,18 +1,5 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
-
-const ImageComponent = () => (
-  <div className="border w-[250px] h-[250px] lg:w-[300px] lg:h-[300px] lg:mt-0  relative">
-    <Image
-      src="/images/circle-profile.png"
-      alt="deida image"
-      width={300}
-      height={300}
-      className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-    />
-  </div>
-);
 
 const ActionButtons = () => (
   <div className="flex flex-wrap gap-y-3">
@@ -40,8 +27,8 @@ const AboutAndButtons = () => (
 
 const HeroSection = () => {
   return (
-    <section>
-      <div className="lg:flex">
+    <section className="lg:py-16">
+      <div className="grid grid-col">
         <div className="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-24 max-w-7xl">
           <div className="grid w-full grid-cols-1 gap-12 mx-auto lg:grid-cols-2">
             <div className="col-span-5">
@@ -49,7 +36,7 @@ const HeroSection = () => {
                 Deida Lopez
               </h1>
               <p className="text-lg lg:text-xl text-gray-500 mb-4 ">
-                Software Engineer, Mobile
+                Software Engineer, Mobile/React Native
               </p>
             </div>
           </div>
