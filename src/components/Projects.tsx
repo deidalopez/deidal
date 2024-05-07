@@ -2,24 +2,50 @@
 import React from "react";
 import Image from "next/image";
 import ReactCardFlip from "react-card-flip";
+import { FaChevronRight } from "react-icons/fa";
 
 const projects = [
   {
     name: "Care/of",
     image: "/images/Careof/CO_track.png",
-    description: "Care/of: Healthy Habits Tracker",
+    description:
+      "Care/of: Healthy Habits Tracker app that rewards users for taking their vitamins and tracking their healthy habits. Also allows for users to edit their upcoming orders, shows insights about how tracking their habits has affected their goals (energy, focus, sleep, etc.), and allows users to make one time purchases in app.",
   },
   {
-    name: "Care/of Sleep",
+    name: "Care/of: Sleep",
     image: "/images/Ashwa/Ashwa_home.png",
-    description: "Care/of: Sleep",
+    description:
+      "The Care/of: Sleep app integrated the Apple Health Kit to track users' sleep data and provide insights on how their sleep habits have been affected by taking their Ashwagandha supplements.",
   },
   {
     name: "West Tenth",
     image: "/images/WestTenth/W10_home.png",
-    description: "West Tenth: Marketplace",
+    description:
+      "West Tenth: Marketplace, app with Seller and Buyer modes that allows Buyers to find small businesses that provide a multitude of services and products. Seller mode allows sellers to update their storefronts, manage orders, and message potential buyers.",
   },
 ];
+
+const FlipCard = ({
+  project,
+  isFlipped,
+  handleHover,
+}: {
+  project: { image: string; description: string };
+  isFlipped: boolean;
+  handleHover: () => void;
+}) => (
+  <div className="border border-orange-800 h-80 w-40 mb-4 ">
+    <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
+      <div className="justify-center align-center" onMouseEnter={handleHover}>
+        <Image src={project.image} alt="deida image" width={180} height={400} />
+      </div>
+
+      <div className="bg-red-400 h-300 w-300" onMouseLeave={handleHover}>
+        <p>{project.description}</p>
+      </div>
+    </ReactCardFlip>
+  </div>
+);
 
 const Card = ({
   project,
@@ -30,22 +56,16 @@ const Card = ({
   isFlipped: boolean;
   handleHover: () => void;
 }) => (
-  <div className="border h-80 w-40 mb-4 justify-content">
-    <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
-      <div onMouseEnter={handleHover}>
-        <Image
-          src={project.image}
-          alt="deida image"
-          width={180}
-          height={400}
-          className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-        />{" "}
-      </div>
-
-      <div className="background-white h-300 w-300" onMouseLeave={handleHover}>
-        <p>{project.description}</p>
-      </div>
-    </ReactCardFlip>
+  <div className="h-80 w-40 mb-4">
+    <div className="justify-center align-center" onMouseEnter={handleHover}>
+      <Image
+        className="rounded-lg"
+        src={project.image}
+        alt="deida image"
+        width={180}
+        height={400}
+      />
+    </div>
   </div>
 );
 
@@ -60,10 +80,18 @@ const Project = ({
   };
 
   return (
-    <div>
-      <h3>{project.name}</h3>
-      <div className="flex justify-center">
+    <div className="border bg-zinc-900	 rounded-lg flex flex-row mb-10 p-5">
+      <div className=" justify-center">
         {Card({ project, isFlipped, handleHover })}{" "}
+        {/* {FlipCard({ project, isFlipped, handleHover })}{" "} */}
+      </div>
+      <div className="h-300 w-300 pl-5" onMouseLeave={handleHover}>
+        <h3 className="text-xl font-medium pb-3">{project.name}</h3>
+        <p>{project.description}</p>
+        <p className="pt-10 underline flex items-center	">
+          Learn more
+          <FaChevronRight className="w-3 h-3 ml-1 " />
+        </p>
       </div>
     </div>
   );
@@ -71,9 +99,9 @@ const Project = ({
 
 const Projects = () => {
   return (
-    <section>
+    <section className="flex flex-wrap">
       <h2 className="text-3xl font-bold mb-6">Projects</h2>
-      <div className="flex">
+      <div className="flex flex-wrap">
         {projects.map((project, index) => (
           <Project key={index} project={project} />
         ))}
