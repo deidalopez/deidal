@@ -10,7 +10,7 @@ const ActionButtons = () => (
       Contact Me
     </Link>
     <button className="px-6 py-4 rounded-full bg-transparent hover:bg-slate-800 text-white border border-white mt-2 lg:mt-5">
-      View Resume
+      <a href="/resume.pdf">View Resume</a>
     </button>
   </div>
 );
@@ -36,7 +36,7 @@ const HeroSection = () => {
                 Deida Lopez
               </h1>
               <p className="text-lg lg:text-xl text-gray-500 mb-4 ">
-                Software Engineer, Mobile/React Native
+                Software Engineer, React | React Native
               </p>
             </div>
           </div>

@@ -88,10 +88,10 @@ const Project = ({
       <div className="h-300 w-300 pl-5 items-center" onMouseLeave={handleHover}>
         <h3 className="text-xl font-medium pb-3">{project.name}</h3>
         <p>{project.description}</p>
-        <p className="pt-10 underline flex items-center">
+        {/* <p className="pt-10 underline flex items-center">
           Learn more
           <FaChevronRight className="w-3 h-3 ml-1 " />
-        </p>
+        </p> */}
       </div>
     </div>
   );
