@@ -10,48 +10,47 @@ import {
 const skillsItems = [
   {
     title: "React Native",
-    description: 'React Native"',
     icon: <FaReact className="w-5 h-5" />,
   },
   {
     title: "React",
-    description: "React Native",
     icon: <FaReact className="w-5 h-5" />,
   },
   {
     title: "JavaScript",
-    description: "React Native",
     icon: <SiJavascript className="w-5 h-5" />,
   },
   {
     title: "TypeScript",
-    description: 'React Native"',
     icon: <SiTypescript className="w-5 h-5" />,
   },
   {
     title: "Node.js",
-    description: 'React Native"',
     icon: <FaNodeJs className="w-5 h-5" />,
   },
   {
     title: "Express.js",
-    description: 'React Native"',
     icon: <SiExpress className="w-5 h-5" />,
   },
   {
     title: "Next.js",
-    description: 'React Native"',
+    icon: <SiNextdotjs className="w-5 h-5" />,
+  },
+  {
+    title: "GraphQL",
+    icon: <SiNextdotjs className="w-5 h-5" />,
+  },
+  {
+    title: "PostgreSQL",
     icon: <SiNextdotjs className="w-5 h-5" />,
   },
 ];
 
 const SkillItem = ({
   title,
-  description,
   icon,
 }: {
   title: string;
-  description: string;
   icon: React.JSX.Element;
 }) => {
   return (
@@ -70,12 +69,7 @@ const SkillsSection = () => {
       </div>
       <div className="grid grid-cols-3 gap-3 ">
         {skillsItems.map((item) => (
-          <SkillItem
-            key={item.title}
-            title={item.title}
-            icon={item.icon}
-            description={item.description}
-          />
+          <SkillItem key={item.title} title={item.title} icon={item.icon} />
         ))}
       </div>
     </section>
