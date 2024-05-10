@@ -5,8 +5,33 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Contact = () => {
   const [emailSubmitted, setEmailSubmitted] = React.useState(false);
-  const handleSubmit = () => {
-    console.log("submit");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const data = {
+      email: e.target.email.value,
+      subject: e.target.subject.value,
+      message: e.target.message.value,
+    };
+
+    const JSONdata = JSON.stringify(data);
+    const endpoint = "/api/send";
+
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSONdata,
+    };
+
+    const response = await fetch(endpoint, options);
+    // const resData = await response.json();
+
+    if (response.status === 200) {
+      console.log("Message sent");
+      setEmailSubmitted(true);
+    }
   };
 
   return (
@@ -21,7 +46,8 @@ const Contact = () => {
           I&apos;m looking for new opportunities, and my inbox is always open.
         </p>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
-          Feel free to add me on LinkedIn! Add a message to let me know you found me on my website.
+          Feel free to add me on LinkedIn! Add a message to let me know you
+          found me on my website.
         </p>
         <div className="socials flex flex-row gap-2">
           <Link href="github.com">

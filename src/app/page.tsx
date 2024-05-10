@@ -1,9 +1,9 @@
-import HeroSection from "@/components/Hero";
-import Contact from "@/components/Contact";
-import Skills from "@/components/Skills";
-import NavBar from "@/components/NavBar";
-import About from "@/components/About";
-import Projects from "@/components/Projects";
+import HeroSection from "@/app/components/Hero";
+import Contact from "@/app/components/Contact";
+import Skills from "@/app/components/Skills";
+import NavBar from "@/app/components/NavBar";
+import About from "@/app/components/About";
+import Projects from "@/app/components/Projects";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
