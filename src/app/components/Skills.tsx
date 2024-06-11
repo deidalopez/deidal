@@ -54,9 +54,9 @@ const SkillItem = ({
   icon: React.JSX.Element;
 }) => {
   return (
-    <div className="border p-2 bg-zinc-900">
-      {icon}
-      <h3 className="text-m font-bold">{title}</h3>
+    <div className="border p-2 rounded bg-zinc-900 flex flex-col justify-center items-center">
+      <div className="my-1">{icon}</div>
+      <h3 className="sm:text-sm lg:text-lg font-bold">{title}</h3>
     </div>
   );
 };
@@ -67,7 +67,7 @@ const SkillsSection = () => {
       <div>
         <h2 className="text-3xl font-bold mb-6">Skills</h2>
       </div>
-      <div className="grid grid-cols-3 gap-3 ">
+      <div className="grid grid-cols-3 gap-4 lg:mx-4">
         {skillsItems.map((item) => (
           <SkillItem key={item.title} title={item.title} icon={item.icon} />
         ))}
