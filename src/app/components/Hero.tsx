@@ -5,7 +5,7 @@ const ActionButtons = () => (
   <div className="flex flex-wrap gap-y-3">
     <Link
       href="/#contact"
-      className="px-6 py-4 rounded-full bg-white hover:bg-slate-200 text-black mr-4  mt-2 "
+      className="px-6 py-4 rounded-full bg-white hover:bg-slate-200 text-black mr-4 mt-2 lg:mt-5"
     >
       Contact Me
     </Link>
@@ -17,7 +17,7 @@ const ActionButtons = () => (
 
 const AboutAndButtons = () => (
   <div className="col-span-5">
-    <p className="text-[#ADB7BE] mb-5">
+    <p className="text-[#ADB7BE] mb-5 sm:text-xl md:text-2xl lg:text-3xl">
       Software Engineer with expertise developing performant mobile applications
       for iOS and Android devices with React Native.
     </p>
@@ -25,24 +25,27 @@ const AboutAndButtons = () => (
   </div>
 );
 
+const NameAndSubtitle = () => {
+  return (
+    <div className="grid w-full grid-cols-1 gap-12 mx-auto lg:grid-cols-2">
+      <div className="col-span-5 mb-4">
+        <h1 className="text-white text-4xl mb-4 sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold">
+          Deida Lopez
+        </h1>
+        <p className="text-gray-500 text-lg sm:text-xl md:text-2xl lg:text-4xl">
+          Software Engineer, React Native | React
+        </p>
+      </div>
+    </div>
+  );
+};
+
 const HeroSection = () => {
   return (
-    <section className="lg:py-16">
-      <div className="grid grid-col">
-        <div className="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-24 max-w-7xl">
-          <div className="grid w-full grid-cols-1 gap-12 mx-auto lg:grid-cols-2">
-            <div className="col-span-5">
-              <h1 className="text-white text-4xl mb-2 sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold">
-                Deida Lopez
-              </h1>
-              <p className="text-lg lg:text-xl text-gray-500 mb-4 ">
-                Software Engineer, React | React Native
-              </p>
-            </div>
-          </div>
-          <AboutAndButtons />
-        </div>
-        {/* <ImageComponent /> */}
+    <section className="md:pt-10 lg:pt-16">
+      <div className="relative items-center w-full py-12 mx-auto  max-w-8xl">
+        <NameAndSubtitle />
+        <AboutAndButtons />
       </div>
     </section>
   );
