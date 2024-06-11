@@ -28,7 +28,7 @@ const AboutAndButtons = () => (
 const NameAndSubtitle = () => {
   return (
     <div className="grid w-full grid-cols-1 gap-12 mx-auto lg:grid-cols-2">
-      <div className="col-span-5 mb-4">
+      <div className="col-span-5 mb-4 lg:mb-10">
         <h1 className="text-white text-4xl mb-4 sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold">
           Deida Lopez
         </h1>
@@ -42,7 +42,7 @@ const NameAndSubtitle = () => {
 
 const HeroSection = () => {
   return (
-    <section className="md:pt-10 lg:pt-16">
+    <section className="md:py-10 lg:py-16">
       <div className="relative items-center w-full py-12 mx-auto  max-w-8xl">
         <NameAndSubtitle />
         <AboutAndButtons />
