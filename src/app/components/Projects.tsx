@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import ReactCardFlip from "react-card-flip";
 import { FaChevronRight } from "react-icons/fa";
 
 const projects = [
@@ -25,50 +24,13 @@ const projects = [
   },
 ];
 
-const FlipCard = ({
-  project,
-  isFlipped,
-  handleHover,
-}: {
-  project: { image: string; description: string };
-  isFlipped: boolean;
-  handleHover: () => void;
-}) => (
-  <div className="border border-orange-800 h-80 w-40 mb-4 ">
-    <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
-      <div className="justify-center align-center" onMouseEnter={handleHover}>
-        <Image src={project.image} alt="deida image" width={180} height={400} />
-      </div>
-
-      <div className="bg-red-400 h-300 w-300" onMouseLeave={handleHover}>
-        <p>{project.description}</p>
-      </div>
-    </ReactCardFlip>
-  </div>
-);
-
 const Card = ({
   project,
-  isFlipped,
-  handleHover,
 }: {
   project: { image: string; description: string };
-  isFlipped: boolean;
-  handleHover: () => void;
 }) => (
-  // <div className="h-80 w-40 mb-4">
-  //   <div className="justify-center align-center" onMouseEnter={handleHover}>
-  //     <Image
-  //       className="rounded-lg"
-  //       src={project.image}
-  //       alt="deida image"
-  //       width={180}
-  //       height={400}
-  //     />
-  //   </div>
-  // </div>
   <div className="h-80 w-40 mb-4">
-    <div className="justify-center align-center" onMouseEnter={handleHover}>
+    <div className="justify-center align-center">
       <Image
         className="rounded-lg"
         src={project.image}
@@ -85,18 +47,10 @@ const Project = ({
 }: {
   project: { name: string; image: string; description: string };
 }) => {
-  const [isFlipped, setIsFlipped] = React.useState(false);
-  const handleHover = () => {
-    setIsFlipped((prev) => !prev);
-  };
-
   return (
     <div className="border bg-zinc-900 rounded-lg flex flex-row mb-10 p-5">
-      <div className="justify-center hidden sm:block">
-        {Card({ project, isFlipped, handleHover })}
-        {/* {FlipCard({ project, isFlipped, handleHover })}{" "} */}
-      </div>
-      <div className="h-300 w-300 pl-5 items-center" onMouseLeave={handleHover}>
+      <div className="justify-center hidden sm:block">{Card({ project })}</div>
+      <div className="h-300 w-300 pl-5 items-center">
         <h3 className="sm:text-3xl lg:text-4xl text-xl font-bold pb-3">
           {project.name}
         </h3>
