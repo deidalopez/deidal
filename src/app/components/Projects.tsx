@@ -66,7 +66,7 @@ const Project = ({
 
 const Projects = () => {
   return (
-    <section className="flex flex-wrap">
+    <section id='projects' className="flex flex-wrap">
       <h2 className="text-3xl font-bold mb-6">Projects</h2>
       <div className="flex flex-wrap lg:mx-4">
         {projects.map((project, index) => (
