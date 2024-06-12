@@ -7,7 +7,7 @@ const NavItem = ({
 }: {
   href: any;
   title: String;
-  closeNavBar: () => void;
+  closeNavBar?: () => void;
 }) => {
   return (
     <Link

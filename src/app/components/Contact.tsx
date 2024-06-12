@@ -6,35 +6,43 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 const linkedinLink = "https://www.linkedin.com/in/deida-lopez/";
 const githubLink = "https://github.com/deidalopez";
 
+interface FormData {
+  email: string;
+  subject: string;
+  message: string;
+}
+
 const Contact = () => {
   const [emailSubmitted, setEmailSubmitted] = React.useState(false);
-  const handleSubmit = async (e) => {
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const data = {
-      email: e.target.email.value,
-      subject: e.target.subject.value,
-      message: e.target.message.value,
+    const data: FormData = {
+      email: e.currentTarget.email.value,
+      subject: e.currentTarget.subject.value,
+      message: e.currentTarget.message.value,
     };
 
     const JSONdata = JSON.stringify(data);
-    const endpoint = "/api/send";
+    // console.log(JSONdata);
+    // const endpoint = "/api/send";
 
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSONdata,
-    };
+    // const options: RequestInit = {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSONdata,
+    // };
 
-    const response = await fetch(endpoint, options);
-    // const resData = await response.json();
+    // const response = await fetch(endpoint, options);
+    // // const resData = await response.json();
 
-    if (response.status === 200) {
-      console.log("Message sent");
-      setEmailSubmitted(true);
-    }
+    // if (response.status === 200) {
+    //   console.log("Message sent");
+    //   setEmailSubmitted(true);
+    // }
   };
 
   return (
@@ -43,11 +51,12 @@ const Contact = () => {
       <div className="z-10">
         <h5 className="text-xl font-bold text-white my-2">Get in touch!</h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
-          I&apos;m looking for new opportunities, and my inbox is always open.
+          I&apos;m looking for new opportunities and would love to hear from
+          you!
         </p>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
-          Feel free to add me on LinkedIn! Add a note to let me know you
-          found me on my website :-)
+          Feel free to add me on LinkedIn! Add a note to let me know you found
+          me on my website :-)
         </p>
         <div className="socials flex flex-row gap-2">
           <Link href={githubLink}>

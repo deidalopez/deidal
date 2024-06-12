@@ -42,7 +42,7 @@ const NameAndSubtitle = () => {
 
 const HeroSection = () => {
   return (
-    <section className="md:py-10 lg:py-16">
+    <section className="py-10 ">
       <div className="relative items-center w-full py-12 mx-auto  max-w-8xl">
         <NameAndSubtitle />
         <AboutAndButtons />
