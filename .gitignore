@@ -12,6 +12,7 @@
 # next.js
 /.next/
 /out/
+/dist/
 
 # production
 /build
@@ -34,3 +35,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# next-video
+to/*
+!to/*.json
+!to/*.js
+!to/*.ts
+public/_next-video
