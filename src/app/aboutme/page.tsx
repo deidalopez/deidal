@@ -7,8 +7,8 @@ const About = () => {
       <h1>About me</h1>
       <ProfilePhoto />
       <p>
-        I have a background in Biological sciences, and Clinical Research. I've
-        always had a fascination with technology and how it can be used to
+        I have a background in Biological sciences, and Clinical Research. I
+        have always had a fascination with technology and how it can be used to
         improve the quality of life for people.
         <br />
         I decided to make a career change and become a software engineer in
@@ -16,8 +16,8 @@ const About = () => {
         college. This led me to enroll in a coding bootcamp, where I learned the
         fundamentals of web development.
         <br />I gained a lot of experience working at a fast-paced startup,
-        where I was able to see how my work directly impacted the company's
-        success.
+        where I was able to see how my work directly impacted the success of the
+        company.
       </p>
     </div>
   );
