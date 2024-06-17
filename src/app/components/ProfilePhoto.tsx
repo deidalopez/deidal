@@ -1,9 +1,10 @@
 import Image from "next/image";
+import config from "../../../next.config";
 
 const ProfilePhoto = () => (
   <div className=" w-[250px] h-[250px] lg:w-[300px] lg:h-[300px] lg:mt-0  relative">
     <Image
-      src="/images/circle-profile.png"
+      src={`${config.basePath}/images/circle-profile.png`}
       alt="deida image"
       width={300}
       height={300}
