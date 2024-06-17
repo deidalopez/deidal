@@ -4,35 +4,38 @@ import Image from "next/image";
 import { FaChevronRight } from "react-icons/fa";
 import config from "../../../next.config";
 
-const projects = [
+type ProjectType = {
+  alt: string;
+  name: string;
+  image: string;
+  description: string;
+};
+
+const projects: ProjectType[] = [
   {
     name: "Care/of",
-    image: `${config.basePath}/images/Careof/CO_track.png`,
+    image: `${config.basePath}/images/Careof/CO_track.PNG`,
     alt: "Care/of app homescreen image",
     description:
       "Care/of: Healthy Habits Tracker app that rewards users for taking their vitamins and tracking their healthy habits. Also allows for users to edit their upcoming orders, shows insights about how tracking their habits has affected their goals (energy, focus, sleep, etc.), and allows users to make one time purchases in app.",
   },
   {
     name: "West Tenth",
-    image: `${config.basePath}/images/WestTenth/W10_home.png`,
+    image: `${config.basePath}/images/WestTenth/W10_home.PNG`,
     alt: "West Tenth app homescreen image",
     description:
       "West Tenth: Marketplace, app with Seller and Buyer modes that allows Buyers to find small businesses that provide a multitude of services and products. Seller mode allows sellers to update their storefronts, manage orders, and message potential buyers.",
   },
   {
     name: "Care/of: Sleep",
-    image: `${config.basePath}/images/Ashwa/Ashwa_home.png`,
+    image: `${config.basePath}/images/Ashwa/Ashwa_home.PNG`,
     alt: "Care/of: Sleep app homescreen image",
     description:
       "The Care/of: Sleep app integrated the Apple Health Kit to track users' sleep data and provide insights on how their sleep habits have been affected by taking their Ashwagandha supplements.",
   },
 ];
 
-const Card = ({
-  project,
-}: {
-  project: { alt: string; image: string; description: string };
-}) => (
+const Card = ({ project }: { project: ProjectType }) => (
   <div className="h-80 w-40 mb-4">
     <div className="justify-center align-center">
       <Image
@@ -46,11 +49,7 @@ const Card = ({
   </div>
 );
 
-const Project = ({
-  project,
-}: {
-  project: { name: string; image: string; description: string };
-}) => {
+const Project = ({ project }: { project: ProjectType }) => {
   return (
     <div className="border bg-zinc-900 rounded-lg flex flex-row mb-10 p-5">
       <div className="justify-center hidden sm:block">{Card({ project })}</div>
