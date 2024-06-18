@@ -9,6 +9,7 @@ type ProjectType = {
   name: string;
   image: string;
   description: string;
+  techStack?: string[];
 };
 
 const projects: ProjectType[] = [
@@ -18,6 +19,14 @@ const projects: ProjectType[] = [
     alt: "Care/of app homescreen image",
     description:
       "Care/of: Healthy Habits Tracker app that rewards users for taking their vitamins and tracking their healthy habits. Also allows for users to edit their upcoming orders, shows insights about how tracking their habits has affected their goals (energy, focus, sleep, etc.), and allows users to make one time purchases in app.",
+    techStack: [
+      "React Native",
+      "JavaScript",
+      "Jest",
+      // "Stripe",
+      "GraphQL",
+      "Redux",
+    ],
   },
   {
     name: "West Tenth",
@@ -25,6 +34,15 @@ const projects: ProjectType[] = [
     alt: "West Tenth app homescreen image",
     description:
       "West Tenth: Marketplace, app with Seller and Buyer modes that allows Buyers to find small businesses that provide a multitude of services and products. Seller mode allows sellers to update their storefronts, manage orders, and message potential buyers.",
+    techStack: [
+      "React Native",
+      "TypeScript",
+      "Jest",
+      "Detox",
+      "Node.js",
+      "GraphQL",
+      "PostgreSQL",
+    ],
   },
   {
     name: "Care/of: Sleep",
@@ -32,6 +50,7 @@ const projects: ProjectType[] = [
     alt: "Care/of: Sleep app homescreen image",
     description:
       "The Care/of: Sleep app integrated the Apple Health Kit to track users' sleep data and provide insights on how their sleep habits have been affected by taking their Ashwagandha supplements.",
+    techStack: ["React Native", "JavaScript"],
   },
 ];
 
@@ -58,10 +77,17 @@ const Project = ({ project }: { project: ProjectType }) => {
           {project.name}
         </h3>
         <p className="sm:text-lg lg:text-xl pb-3">{project.description}</p>
-        <p className="pt-13 text-sm  underline flex items-center">
+        <div className="flex flex-wrap gap-3 pt-3">
+          {project.techStack?.map((tech, index) => (
+            <p key={index} className="text-xs bg-zinc-600 p-2 rounded-md">
+              {tech}
+            </p>
+          ))}
+        </div>
+        {/* <p className="pt-13 text-sm  underline flex items-center">
           Learn more
           <FaChevronRight className="w-3 h-3 ml-1 " />
-        </p>
+        </p> */}
       </div>
     </div>
   );
