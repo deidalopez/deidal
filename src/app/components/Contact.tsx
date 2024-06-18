@@ -12,6 +12,72 @@ interface FormData {
   message: string;
 }
 
+type EmailProps = {
+  emailSubmitted: boolean;
+  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+};
+
+const EmailComponent = ({ emailSubmitted, handleSubmit }: EmailProps) => {
+  return emailSubmitted ? (
+    <p className="text-green-500 text-sm mt-2">Email sent successfully!</p>
+  ) : (
+    <form className="flex flex-col" onSubmit={handleSubmit}>
+      <div className="mb-6">
+        <label
+          htmlFor="email"
+          className="text-white block mb-2 text-sm font-medium"
+        >
+          Your email
+        </label>
+        <input
+          name="email"
+          type="email"
+          id="email"
+          required
+          className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+          placeholder="name@gmail.com"
+        />
+      </div>
+      <div className="mb-6">
+        <label
+          htmlFor="subject"
+          className="text-white block text-sm mb-2 font-medium"
+        >
+          Subject
+        </label>
+        <input
+          name="subject"
+          type="text"
+          id="subject"
+          required
+          className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+          placeholder="Reaching out from your website!"
+        />
+      </div>
+      <div className="mb-6">
+        <label
+          htmlFor="message"
+          className="text-white block text-sm mb-2 font-medium"
+        >
+          Message
+        </label>
+        <textarea
+          name="message"
+          id="message"
+          className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+          placeholder="Let's talk about..."
+        />
+      </div>
+      <button
+        type="submit"
+        className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
+      >
+        Send Message
+      </button>
+    </form>
+  );
+};
+
 const Contact = () => {
   const [emailSubmitted, setEmailSubmitted] = React.useState(false);
 
@@ -58,76 +124,18 @@ const Contact = () => {
           Feel free to add me on LinkedIn! Add a note to let me know you found
           me on my website :-)
         </p>
-        <div className="socials flex flex-row gap-2">
+        <div className="socials flex flex-row gap-10 pt-2">
           <Link href={githubLink}>
-            <FaGithub className="w-8 h-8" />
+            <FaGithub className="w-10 h-10" />
           </Link>
           <Link href={linkedinLink}>
-            <FaLinkedin href="linkedin.com" className="w-8 h-8" />
+            <FaLinkedin href="linkedin.com" className="w-10 h-10" />
           </Link>
         </div>
-      </div>
-      <div>
-        {emailSubmitted ? (
-          <p className="text-green-500 text-sm mt-2">
-            Email sent successfully!
-          </p>
-        ) : (
-          <form className="flex flex-col" onSubmit={handleSubmit}>
-            <div className="mb-6">
-              <label
-                htmlFor="email"
-                className="text-white block mb-2 text-sm font-medium"
-              >
-                Your email
-              </label>
-              <input
-                name="email"
-                type="email"
-                id="email"
-                required
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="name@gmail.com"
-              />
-            </div>
-            <div className="mb-6">
-              <label
-                htmlFor="subject"
-                className="text-white block text-sm mb-2 font-medium"
-              >
-                Subject
-              </label>
-              <input
-                name="subject"
-                type="text"
-                id="subject"
-                required
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="Reaching out from your website!"
-              />
-            </div>
-            <div className="mb-6">
-              <label
-                htmlFor="message"
-                className="text-white block text-sm mb-2 font-medium"
-              >
-                Message
-              </label>
-              <textarea
-                name="message"
-                id="message"
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="Let's talk about..."
-              />
-            </div>
-            <button
-              type="submit"
-              className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
-            >
-              Send Message
-            </button>
-          </form>
-        )}
+        {/* <EmailComponent
+          emailSubmitted={emailSubmitted}
+          handleSubmit={handleSubmit}
+        /> */}
       </div>
     </section>
   );
