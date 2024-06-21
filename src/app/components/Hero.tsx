@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import config from "../../../next.config";
 
 const ActionButtons = () => (
   <div className="flex flex-wrap gap-y-3">
@@ -10,7 +11,7 @@ const ActionButtons = () => (
       Contact Me
     </Link>
     <button className="px-6 py-4 rounded-full bg-transparent hover:bg-slate-800 text-white border border-white mt-2 lg:mt-5">
-      <a href="/resume.pdf">View Resume</a>
+      <a href={`${config.basePath}/resume.pdf`}>View Resume</a>
     </button>
   </div>
 );
