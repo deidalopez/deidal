@@ -70,7 +70,7 @@ const Card = ({ project }: { project: ProjectType }) => (
 
 const Project = ({ project }: { project: ProjectType }) => {
   return (
-    <div className="border bg-zinc-900 rounded-lg flex flex-row mb-10 p-5">
+    <div className="border bg-accent rounded-lg flex flex-row mb-10 p-5">
       <div className="justify-center hidden sm:block">{Card({ project })}</div>
       <div className="h-300 w-300 pl-5 items-center">
         <h3 className="sm:text-3xl lg:text-4xl text-xl font-bold pb-3">
@@ -79,7 +79,10 @@ const Project = ({ project }: { project: ProjectType }) => {
         <p className="sm:text-lg lg:text-xl pb-3">{project.description}</p>
         <div className="flex flex-wrap gap-3 pt-3">
           {project.techStack?.map((tech, index) => (
-            <p key={index} className="text-xs bg-zinc-600 p-2 rounded-md">
+            <p
+              key={index}
+              className="text-xs bg-accentSecondary p-2 rounded-md"
+            >
               {tech}
             </p>
           ))}

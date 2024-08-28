@@ -3,10 +3,10 @@ import ProfilePhoto from "./ProfilePhoto";
 
 const About = () => {
   return (
-    <section id="'about'" className="text-white">
+    <section id="'about'" className="text-textPrimary">
       <div className="flex flex-row flex-wrap gap-4">
         <div className="flex-1">
-          <h2 className="text-3xl font-bold mb-4 md:text-4xl lg:text-5xl">
+          <h2 className="text-3xl text-textPrimary font-bold mb-4 md:text-4xl lg:text-5xl">
             About Me
           </h2>
           <p className="md:text-lg lg:text-2xl">

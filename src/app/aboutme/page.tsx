@@ -4,7 +4,7 @@ import ProfilePhoto from "../components/ProfilePhoto";
 const About = () => {
   return (
     <div className="container mt-12 mx-auto px-10 py-10">
-      <h1>About me</h1>
+      <h1 >About me</h1>
       <ProfilePhoto />
       <p>
         I have a background in Biological sciences, and Clinical Research. I

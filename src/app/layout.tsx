@@ -17,8 +17,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`bg-bkg text-content ${inter.className}`}>
+    <html lang="en" className={inter.className} suppressHydrationWarning>
+      <body className={`bg-bkg text-textPrimary ${inter.className}`}>
         <Providers>
           <NavBar />
           <main className="flex flex-col min-h-screen px-4 md:px-6">

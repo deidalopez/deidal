@@ -9,6 +9,8 @@ const ThemeSwitch = () => {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
 
+  console.log("resolvedTheme ", resolvedTheme);
+
   useEffect(() => setMounted(true), []);
 
   if (!mounted) {

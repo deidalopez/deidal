@@ -6,24 +6,37 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+
+  --color-accent: #59ba9a;
+  --color-accent-secondary: #dd7321;
+
+  --color-bkg: #f5f6de;
+
+  --color-text: #001107;
+  --color-text-secondary: #011516;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.dark {
+  --color-accent: #0f3616;
+  --color-accent-secondary: #dd612c;
+
+  --color-bkg: #001101;
+
+  --color-text: #fff;
+  --color-text-secondary: #f9faeb;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  color: #000000;
+  background: #fff;
+
+  /* color: rgb(var(--foreground-rgb)); */
+  /* background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
 }
 
 @layer utilities {
