@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { FaChevronRight } from "react-icons/fa";
+// import { FaChevronRight } from "react-icons/fa";
 import config from "../../../next.config";
 
 type ProjectType = {
@@ -81,7 +81,7 @@ const Project = ({ project }: { project: ProjectType }) => {
           {project.techStack?.map((tech, index) => (
             <p
               key={index}
-              className="text-xs bg-accentSecondary p-2 rounded-md"
+              className="text-xs bg-accentSecondary p-1 px-2 rounded-md tracking-wide font-semibold"
             >
               {tech}
             </p>

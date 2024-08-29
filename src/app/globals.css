@@ -8,7 +8,7 @@
   --background-end-rgb: 255, 255, 255;
 
   --color-accent: #59ba9a;
-  --color-accent-secondary: #dd7321;
+  --color-accent-secondary: #9e1c02;
 
   --color-bkg: #f5f6de;
 
@@ -18,7 +18,7 @@
 
 .dark {
   --color-accent: #0f3616;
-  --color-accent-secondary: #dd612c;
+  --color-accent-secondary: #0a7375;
 
   --color-bkg: #001101;
 

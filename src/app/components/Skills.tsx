@@ -54,9 +54,9 @@ const SkillItem = ({
   icon: React.JSX.Element;
 }) => {
   return (
-    <div className="border p-2 rounded bg-accent flex flex-col justify-center items-center">
+    <div className="border p-2 rounded bg-accent flex flex-col justify-center items-center hover:scale-105 transition-transform duration-200">
       <div className="my-1">{icon}</div>
-      <h3 className="sm:text-sm lg:text-lg font-bold">{title}</h3>
+      <h3 className="sm:text-sm lg:text-lg font-bold tracking-wide">{title}</h3>
     </div>
   );
 };

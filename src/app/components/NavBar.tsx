@@ -27,7 +27,6 @@ const NavBar = () => {
   const close = () => setNavBarOpen(false);
 
   return (
-    // <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-white dark:bg-[#121212]  bg-opacity-100">
     <nav className="bg-bkg  fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-opacity-100">
       <div className="flex lg:py-4 Fitems-center  mx-auto px-4 p-2">
         <div className="mobile-menu block md:hidden">
@@ -48,16 +47,18 @@ const NavBar = () => {
           )}
         </div>
         <div className="menu hidden md:block md:w-auto" id="navbar">
-          <ThemeSwitch />
-          <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-8">
-            {navComponents.map((item, index) => (
-              <li key={index}>
-                {NavItem({
-                  ...item,
-                  closeNavBar: close,
-                })}
-              </li>
-            ))}
+          <ul className="flex justify-between p-4 md:p-0 md:flex-row md:space-x-8 mt-8">
+            <ThemeSwitch />
+            <>
+              {navComponents.map((item, index) => (
+                <li key={index}>
+                  {NavItem({
+                    ...item,
+                    closeNavBar: close,
+                  })}
+                </li>
+              ))}
+            </>
           </ul>
         </div>
       </div>
