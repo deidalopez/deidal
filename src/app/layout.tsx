@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import NavBar from "@/app/components/NavBar";
+import Contact from "@/app/components/Contact";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({
           <main className="flex flex-col min-h-screen px-4 md:px-6">
             {children}
           </main>
+          <Contact />
         </Providers>
       </body>
     </html>

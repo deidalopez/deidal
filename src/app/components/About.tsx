@@ -3,17 +3,17 @@ import ProfilePhoto from "./ProfilePhoto";
 
 const About = () => {
   return (
-    <section id="'about'" className="text-textPrimary">
+    <section id="'about'" className="text-textPrimary pb-10">
       <div className="flex flex-row flex-wrap gap-4">
         <div className="flex-1">
-          <h2 className="text-3xl text-textPrimary font-bold mb-4 md:text-4xl lg:text-5xl">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl text-textPrimary font-bold  mb-10 ">
             About Me
           </h2>
           <div>
             <p className="md:text-lg lg:text-2xl leading-relaxed my-4">
               Hey there! My name is Deida (pronounced &lsquo;day-dah&rsquo; or
               &lsquo;data&rsquo;) and I am a{" "}
-              <span className="font-bold md:text-lg lg:text-3xl">
+              <span className="font-bold md:text-lg lg:text-2xl">
                 Mobile & Frontend developer
               </span>{" "}
               who loves to create intuitive, delightful, user-centric
@@ -29,7 +29,9 @@ const About = () => {
             </p>
           </div>
         </div>
-        <ProfilePhoto />
+        <div className="md:block hidden">
+          <ProfilePhoto />
+        </div>
       </div>
     </section>
   );
