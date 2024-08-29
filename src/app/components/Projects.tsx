@@ -15,7 +15,8 @@ type ProjectType = {
 const projects: ProjectType[] = [
   {
     name: "Care/of",
-    image: `${config.basePath}/images/Careof/CO_track.PNG`,
+    image: `${config.basePath}/images/Careof/CO_gif.gif`,
+    // image: `${config.basePath}/images/Careof/CO_track.PNG`,
     alt: "Care/of app homescreen image",
     description:
       "Care/of: Healthy Habits Tracker app that rewards users for taking their vitamins and tracking their healthy habits. Also allows for users to edit their upcoming orders, shows insights about how tracking their habits has affected their goals (energy, focus, sleep, etc.), and allows users to make one time purchases in app.",
@@ -55,33 +56,31 @@ const projects: ProjectType[] = [
 ];
 
 const Card = ({ project }: { project: ProjectType }) => (
-  <div className="h-80 w-40 mb-4">
-    <div className="justify-center align-center">
-      <Image
-        className="rounded-lg"
-        src={project.image}
-        alt={project.alt}
-        width={180}
-        height={400}
-      />
-    </div>
+  <div className="w-40">
+    <Image
+      className="rounded-lg"
+      src={project.image}
+      alt={project.alt}
+      width={180}
+      height={400}
+    />
   </div>
 );
 
 const Project = ({ project }: { project: ProjectType }) => {
   return (
-    <div className="border bg-accent rounded-lg flex flex-row mb-10 p-5">
-      <div className="justify-center hidden sm:block">{Card({ project })}</div>
+    <div className="border bg-accent rounded-lg flex flex-row mb-8 lg:mb-10  p-6 lg:p-10">
+      <div className="hidden sm:block p-3">{Card({ project })}</div>
       <div className="h-300 w-300 pl-5 items-center">
         <h3 className="sm:text-3xl lg:text-4xl text-xl font-bold pb-3">
           {project.name}
         </h3>
-        <p className="sm:text-lg lg:text-xl pb-3">{project.description}</p>
+        <p className="sm:text-lg lg:text-xl pb-3  ">{project.description}</p>
         <div className="flex flex-wrap gap-3 pt-3">
           {project.techStack?.map((tech, index) => (
             <p
               key={index}
-              className="text-xs bg-accentSecondary p-1 px-2 rounded-md tracking-wide font-semibold"
+              className="text-s bg-accentSecondary text-textPrimary p-1 px-2 rounded-md tracking-wide"
             >
               {tech}
             </p>
@@ -99,7 +98,9 @@ const Project = ({ project }: { project: ProjectType }) => {
 const Projects = () => {
   return (
     <section id="projects" className="flex flex-wrap">
-      <h2 className="text-3xl font-bold mb-6">Projects</h2>
+      <h2 className="text-3xl md:text-4xl lg:text-5xl text-textPrimary font-bold mb-10">
+        Projects
+      </h2>
       <div className="flex flex-wrap lg:mx-4">
         {projects.map((project, index) => (
           <Project key={index} project={project} />
