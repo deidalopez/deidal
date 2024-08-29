@@ -9,18 +9,25 @@ const About = () => {
           <h2 className="text-3xl text-textPrimary font-bold mb-4 md:text-4xl lg:text-5xl">
             About Me
           </h2>
-          <p className="md:text-lg lg:text-2xl">
-            I am passionate about providing sleek solutions, intuitive UI, and
-            an overall great experiences for users. I value and am dedicated to
-            well documented code, keeping track of metrics, providing meaningful
-            results for the company.
-            <br />
-            <p className="my-4">
-              I have experience working as a Full Stack Developer using React,
-              Node.js, GraphQL, and PostgreSQL, and as a Mobile Developer using
-              React Native.
+          <div>
+            <p className="md:text-lg lg:text-2xl leading-relaxed my-4">
+              Hey there! My name is Deida (pronounced &lsquo;day-dah&rsquo; or
+              &lsquo;data&rsquo;) and I am a{" "}
+              <span className="font-bold md:text-lg lg:text-3xl">
+                Mobile & Frontend developer
+              </span>{" "}
+              who loves to create intuitive, delightful, user-centric
+              applications. I&apos;ve built multiple apps with startups that
+              users love to use!
+              <br />
+              <br /> I also have experience as a Full Stack Developer, having
+              worked extensively with React, Node.js, GraphQL, and PostgreSQL.
+              <br />
+              <br /> I&apos;m all about writing clean, well-documented code, and
+              tracking metrics that matter, ensuring that the results we achieve
+              are as meaningful as they are impactful.
             </p>
-          </p>
+          </div>
         </div>
         <ProfilePhoto />
       </div>
