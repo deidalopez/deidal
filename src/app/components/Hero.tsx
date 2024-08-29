@@ -6,11 +6,11 @@ const ActionButtons = () => (
   <div className="flex flex-wrap gap-y-3">
     <Link
       href="/#contact"
-      className="px-6 py-4 rounded-full bg-accent hover:bg-slate-200 text-textSecondary mr-4 mt-2 lg:mt-5"
+      className="px-6 py-4 rounded-full bg-accent hover:scale-105 hover:duration-200 text-textSecondary mr-4 mt-2 lg:mt-5"
     >
       Contact Me
     </Link>
-    <button className="px-6 py-4 rounded-full bg-transparent hover:bg-slate-800 text-textPrimary border border-textPrimary mt-2 lg:mt-5">
+    <button className="px-6 py-4 rounded-full bg-transparent hover:scale-105 hover:duration-200  text-textPrimary border border-textPrimary mt-2 lg:mt-5">
       <a href={`${config.basePath}/resume.pdf`}>View Resume</a>
     </button>
   </div>
@@ -43,7 +43,7 @@ const NameAndSubtitle = () => {
 
 const HeroSection = () => {
   return (
-    <section className="py-10">
+    <section className="py-5">
       <div className="relative items-center w-full py-12 mx-auto  max-w-8xl">
         <NameAndSubtitle />
         <AboutAndButtons />

@@ -63,9 +63,11 @@ const SkillItem = ({
 
 const SkillsSection = () => {
   return (
-    <section>
+    <section className="pb-10">
       <div>
-        <h2 className="text-3xl font-bold mb-6">Skills</h2>
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-10">
+          Skills
+        </h2>
       </div>
       <div className="grid grid-cols-3 gap-4 lg:mx-4">
         {skillsItems.map((item) => (
