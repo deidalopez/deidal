@@ -47,7 +47,7 @@ const projects: ProjectType[] = [
   },
   {
     name: "Care/of: Sleep",
-    image: `${config.basePath}/images/Ashwa/Ashwa_home.PNG`,
+    image: `${config.basePath}/images/Ashwa/Ashwa_intro.gif`,
     alt: "Care/of: Sleep app homescreen image",
     description:
       "The Care/of: Sleep app integrated the Apple Health Kit to track users' sleep data and provide insights on how their sleep habits have been affected by taking their Ashwagandha supplements.",

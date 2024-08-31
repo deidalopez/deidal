@@ -7,8 +7,10 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 
-  --color-accent: #afbb2b;
-  --color-accent-secondary: #f56b09;
+  /* --color-accent: #afbb2b; */
+  --color-accent: #84a326;
+  --color-accent-secondary: #f5f6de;
+  /* --color-accent-secondary: #f56b09; */
   /* --color-accent-secondary: #de5e02; */
 
   --color-bkg: #f5f6de;
@@ -19,7 +21,7 @@
 
 .dark {
   --color-accent: #0f3616;
-  --color-accent-secondary: #0a7375;
+  --color-accent-secondary: #001101;
 
   --color-bkg: #001101;
 
